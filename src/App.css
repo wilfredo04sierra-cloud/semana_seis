@@ -1,85 +1,167 @@
-.plan-container {
+.app-container {
   width: 100%;
-  max-width: 680px;
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  max-width: 650px;
+  margin: 0 auto;
 }
 
-.header {
+.panel-clase {
+  background: #111e38;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Header */
+.header-clase {
   text-align: center;
-  margin-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 1.5rem;
 }
 
-.subtitle {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.badge-tema {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
   color: #38bdf8;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
-.title {
-  font-size: 1.75rem;
-  font-weight: 700;
+.header-title {
   color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.activities-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-/* Tarjeta individual */
-.activity-card {
-  background: #ffffff;
-  color: #1e293b;
-  border-radius: 12px;
+/* Tarjeta de Objetivos */
+.objetivos-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
   padding: 1.4rem 1.6rem;
+  cursor: pointer;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.objetivos-list {
+  padding-left: 1.2rem;
+  color: #94a3b8;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Contenedor de Actividades */
+.seccion-actividades {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-left: 5px solid #0284c7;
+  gap: 1rem;
 }
 
-.activity-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+.actividades-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* Badge / Etiqueta de fase */
-.badge {
+/* Tarjetas individuales de actividad */
+.activity-item {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 14px;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-left: 6px solid #0284c7;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.activity-item.completada {
+  background: #f0fdf4;
+  border-left-color: #16a34a;
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.15);
+}
+
+.activity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.badge-fase {
   align-self: flex-start;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.3rem 0.75rem;
-  border-radius: 9999px;
-  background-color: #e0f2fe;
-  color: #0369a1;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
 }
 
-.activity-title {
-  font-size: 1.15rem;
-  font-weight: 600;
+.badge-fase.diagnóstica { background: #fee2e2; color: #b91c1c; }
+.badge-fase.construcción { background: #fef3c7; color: #b45309; }
+.badge-fase.aplicación { background: #dbeafe; color: #1d4ed8; }
+
+.activity-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
   color: #0f172a;
 }
 
-.activity-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+.duracion {
   font-size: 0.85rem;
   color: #64748b;
   font-weight: 500;
+}
+
+/* Botón interactivo de estado */
+.btn-estado {
+  border: none;
+  background: #0284c7;
+  color: #ffffff;
+  padding: 0.65rem 1.1rem;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.btn-estado:hover {
+  transform: scale(1.05);
+  background: #0369a1;
+}
+
+.btn-estado:active {
+  transform: scale(0.96);
+}
+
+.activity-item.completada .btn-estado {
+  background: #16a34a;
+}
+
+.activity-item.completada .btn-estado:hover {
+  background: #15803d;
 }
